@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 77524ce24b6465748865e38a0f3e3da1
+timeCreated: 1495303121
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Gunner
+    100004: karosse8
+    100006: Magazin
+    100008: pCube15
+    100010: pCube16
+    100012: roof
+    100014: roof1
+    100016: TommyGun
+    100018: wheel
+    100020: wheel1
+    100022: wheel3
+    100024: wheel4
+    100026: Camera
+    100028: Directional Light
+    400000: //RootNode
+    400002: Gunner
+    400004: karosse8
+    400006: Magazin
+    400008: pCube15
+    400010: pCube16
+    400012: roof
+    400014: roof1
+    400016: TommyGun
+    400018: wheel
+    400020: wheel1
+    400022: wheel3
+    400024: wheel4
+    400026: Camera
+    400028: Directional Light
+    2300000: Gunner
+    2300002: karosse8
+    2300004: Magazin
+    2300006: pCube15
+    2300008: pCube16
+    2300010: roof
+    2300012: roof1
+    2300014: TommyGun
+    2300016: wheel
+    2300018: wheel1
+    2300020: wheel3
+    2300022: wheel4
+    3300000: Gunner
+    3300002: karosse8
+    3300004: Magazin
+    3300006: pCube15
+    3300008: pCube16
+    3300010: roof
+    3300012: roof1
+    3300014: TommyGun
+    3300016: wheel
+    3300018: wheel1
+    3300020: wheel3
+    3300022: wheel4
+    4300000: wheel4
+    4300002: wheel3
+    4300004: wheel1
+    4300006: wheel
+    4300008: roof1
+    4300010: roof
+    4300012: karosse8
+    4300014: Gunner
+    4300016: pCube15
+    4300018: pCube16
+    4300020: TommyGun
+    4300022: Magazin
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

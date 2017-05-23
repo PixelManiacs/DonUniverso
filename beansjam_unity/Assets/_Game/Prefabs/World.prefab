@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1395023563552114}
+  m_IsPrefabParent: 1
+--- !u!1 &1395023563552114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4609549338666474}
+  - component: {fileID: 114371003405792896}
+  - component: {fileID: 114922155236112550}
+  m_Layer: 0
+  m_Name: World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1584835625006730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4023926778936468}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1753798299579160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4014635648712462}
+  m_Layer: 0
+  m_Name: Planets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4014635648712462
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1753798299579160}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4609549338666474}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4023926778936468
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584835625006730}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4609549338666474}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4609549338666474
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395023563552114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4014635648712462}
+  - {fileID: 4023926778936468}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114371003405792896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395023563552114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6321f274d65f9465590f2345198c650f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetSpawner: {fileID: 0}
+--- !u!114 &114922155236112550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395023563552114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c317efbe39c3e4ecd9400374a0887a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetContainer: {fileID: 4014635648712462}
+  asteroidContainer: {fileID: 4023926778936468}
+  planetPrefabsDualColor:
+  - {fileID: 1722850067490088, guid: 57238f481bcb24a73a0be2cacba0ec6d, type: 2}
+  - {fileID: 1258623664223162, guid: a7dd8a1b67bd74131a229e52c2f9d30f, type: 2}
+  planetPrefabsSingleColor:
+  - {fileID: 1291577224297312, guid: e2e0ca233537344478ac5ddd238a1ba6, type: 2}
+  - {fileID: 1640443146868920, guid: 08208567adc024bc08d7c6d406ab997a, type: 2}
+  planetPrefabSchmaturn: {fileID: 1267719129165680, guid: 7aa70d816e4e24c89ac77e032153d37c,
+    type: 2}
+  planetPrefabSchmenus: {fileID: 1501890439914530, guid: d7824cadc04624c26ad8d28e52fb2b80,
+    type: 2}
+  asteroidPrefabs:
+  - {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 2}
+  - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 2}
+  - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 2}
+  range: 1000
+  maxLevel: 100
+  sizeMin: 0.3
+  sizeMax: 4
+  PlanetColorArray:
+  - {r: 0.78431374, g: 0.34509805, b: 0.34509805, a: 1}
+  - {r: 0.627451, g: 0.22745098, b: 0.22745098, a: 1}
+  - {r: 0.14901961, g: 0.35686275, b: 0.52156866, a: 1}
+  - {r: 0.27450982, g: 0.5019608, b: 0.6784314, a: 1}
+  - {r: 0.8509804, g: 0.8235294, b: 0.36078432, a: 1}
+  - {r: 0.36862746, g: 0.60784316, b: 0.35686275, a: 1}
+  - {r: 0.47058824, g: 0.7921569, b: 0.5254902, a: 1}
