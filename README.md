@@ -2,7 +2,7 @@
 
 Don Universo is a game project initiated by the [Pixel Maniacs](https://twitter.com/pixel_maniacs) during a gamejam called "[beansjam](http://jams.gamejolt.io/beansjam)" by German Gaming TV channel [Rocket Beans TV](https://www.rocketbeans.tv):
 
-[![Don Universo - Preview after 48h GameDev](http://pixel-maniacs.com/uploads/donuniverso.gif)](http://www.youtube.com/watch?v=R9mJScr46g8)
+[![Don Universo - Preview after 48h GameDev](http://pixel-maniacs.com/uploads/donuniverso2.gif)](http://www.youtube.com/watch?v=R9mJScr46g8)
 
 We would love to see the game being futher developed, but currently don't have the time and budget to finish it ourselves.
 
@@ -38,6 +38,11 @@ The tricky part would be the controls and performance optimization on mobile.
 ## Android
 
 Same as iOS :)
+
+# Some other ideas
+
+If we get some contributions here we could e.g. make a small show with all contributors via Skype on our [Stream](https://www.twitch.tv/pixel_maniacs) where
+we discuss the current feature-requests or present how much revenue we've sent to charity so far etc.
 
 # You think we're doing it wrong?
 
