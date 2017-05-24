@@ -41,8 +41,8 @@ Same as iOS :)
 
 # Some other ideas
 
-If we get some contributions here we could e.g. make a small show with all contributors via Skype on our [Stream](https://www.twitch.tv/pixel_maniacs) where
-we discuss the current feature-requests or present how much revenue we've sent to charity so far etc.
+If we get some contributions here we could e.g. make a small show with all contributors via Skype in our [Stream](https://www.twitch.tv/pixel_maniacs) where
+we discuss the current feature-requests or present how much revenue we've donated to charity so far etc.
 
 # You think we're doing it wrong?
 
