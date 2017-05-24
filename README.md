@@ -42,7 +42,7 @@ Same as iOS :)
 # Some other ideas
 
 If we get some contributions here we could e.g. make a small show with all contributors via Skype in our [Stream](https://www.twitch.tv/pixel_maniacs) where
-we discuss the current feature requests or present how much revenue we've donated to charity so far etc.
+we discuss the current feature-requests or present how much revenue we've donated to charity so far etc.
 
 # You think we're doing it wrong?
 
@@ -53,4 +53,12 @@ In case we're doing anything wrong or have any recommendations, [contact us](htt
 Feel free to publish your own fork. However, if you do so, we'd love to see you dontate the revenue aswell :)
 We still of course would tweet about the project or contribute some free ads in our mobile apps.
 
+# Ideas for contributions
 
+DonUniverso has been built on a weekend. The code is probably a mess, except it works :)
+Some initial ideas:
+
+- coding style and linting: brace style, method/property accessibility etc.
+- typos
+- replace GameObject.Find() calls
+- spawn enemies closer to planet
