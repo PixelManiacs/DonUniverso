@@ -12,15 +12,24 @@ Which organisation shall receive the money will be decided by contributors.
 
 # Organisational Stuff
 
-## Communication
+If you'd like to contribute check for open issues on GitHub or discuss with other contributers on our [Discord channel](https://discordapp.com/channels/235374231938924545/316945649901764628).
 
-We have created a channel in our Discord for contributors:
-https://discordapp.com/channels/235374231938924545/316945649901764628
+## Contribute
 
-## Pull Requests
+If you want to change something fork this repo, commit your changes and submit a pull request. We'll review it and merge it. Our current maintainer (responsible for accepting pull requests) is [Chris](https://twitter.com/hinzundcode). If somebody else want's to do this job, simply contact him :)
 
-Current maintener: [Chris](https://twitter.com/hinzundcode)
-If somebody else want's to do this job, simply contact him :)
+Please use Unity 5.6.1f1.
+
+## Ideas for contribution
+
+DonUniverso has been built on a weekend. The code is probably a mess, except it works :)
+Some initial ideas for contributions:
+
+- coding style and linting: brace style, method/property accessibility etc.
+- typos
+- replace GameObject.Find() calls
+- spawn enemies closer to planet
+- comments
 
 # Options to generate Revenue for Charity
 
@@ -52,13 +61,3 @@ In case we're doing anything wrong or have any recommendations, [contact us](htt
 
 Feel free to publish your own fork. However, if you do so, we'd love to see you dontate the revenue aswell :)
 We still of course would tweet about the project or contribute some free ads in our mobile apps.
-
-# Ideas for contributions
-
-DonUniverso has been built on a weekend. The code is probably a mess, except it works :)
-Some initial ideas:
-
-- coding style and linting: brace style, method/property accessibility etc.
-- typos
-- replace GameObject.Find() calls
-- spawn enemies closer to planet
