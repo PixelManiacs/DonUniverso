@@ -2,7 +2,7 @@
 
 Don Universo is a game project initiated by the [Pixel Maniacs](https://twitter.com/pixel_maniacs) during a gamejam called "[beansjam](http://jams.gamejolt.io/beansjam)" by German Gaming TV channel [RocketBeans.tv](https://www.rocketbeans.tv):
 
-[![Don Universo - Preview after 48h GameDev](http://img.youtube.com/vi/R9mJScr46g8/0.jpg)](http://www.youtube.com/watch?v=R9mJScr46g8)
+[![Don Universo - Preview after 48h GameDev](http://pixel-maniacs.com/uploads/donuniverso.gif)](http://www.youtube.com/watch?v=R9mJScr46g8)
 
 We would love to see that the game is futher developed but currently don't have the time and budget to finish it by ourselves.
 
@@ -10,7 +10,7 @@ So we've made the decision to make the current version of the game Open Source.
 In case we publish it, 100% of the money will be donated to charity.
 Which organisation shall receive the money is defined by all contributors of this project.
 
-# Organisation Stuff
+# Organisational Stuff
 
 ## Communication
 
