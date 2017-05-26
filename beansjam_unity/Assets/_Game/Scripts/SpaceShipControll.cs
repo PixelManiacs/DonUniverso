@@ -198,17 +198,30 @@ public class SpaceShipControll : MonoBehaviour
             // Set the particle size of the boost.
             SetParticleSystemSize(particlesBootsLeft, boostParticleSize);
             SetParticleSystemSize(particlesBootsRight, boostParticleSize);
+
+            // Play the boost sound if it isn't already playing.
+            if (!boostAudio.isPlaying)
+                boostAudio.Play();
         }
         else {
             // Set the particle size of the boost to normal.
             SetParticleSystemSize(particlesBootsLeft, 1f);
             SetParticleSystemSize(particlesBootsRight, 1f);
+            
+            // Decrease the velocity of the ship.
+            breakForce = -spaceShipRigidBody.velocity;
+            spaceShipRigidBody.AddForce(breakForce);
+
+            // Stop the boost sound if it's playing.
+            if (boostAudio.isPlaying)
+                boostAudio.Stop();
         }
 
         // If 'LeftShit' is not pressed, refill the fuel.
         if (!bootsActivated)
             fuel = Mathf.Min(fuel + fuelResetPerFrame, maxFuel);
         
+        // Calculate the rotation of the needle.
         rot = Map(fuel, 0f, maxFuel, 0f, 242f) - 122f;
         // Update the rotation of the needle.
         needle.rotation = Quaternion.Euler(new Vector3(0, 0, -rot));
@@ -216,37 +229,21 @@ public class SpaceShipControll : MonoBehaviour
         // Add force to the ship so it's dragging.
         spaceShipRigidBody.AddForce(transform.forward * vertical * gas * b, ForceMode.Force);
 
+        // If the player controls the ship to fly forward.
         if (forward)
         {
             particlesBootsLeft.Emit(1);
             particlesBootsRight.Emit(1);
         }
-
-        if (!boosting)
-        {
-            breakForce = -spaceShipRigidBody.velocity;
-            spaceShipRigidBody.AddForce(breakForce);
-
-            if (boostAudio.isPlaying)
-            {
-                boostAudio.Stop();
-            }
-        }
-        else
-        {
-            if (!boostAudio.isPlaying)
-            {
-                boostAudio.Play();
-            }
-        }
-
-
+        
+        // Steering the ship.
         var horizontal = Input.GetAxis("Horizontal");
         if (horizontal > 0.1f)
             particlesBootsRight.Emit(1);
         else if (horizontal < -0.1f)
             particlesBootsLeft.Emit(1);
 
+        // Rotate the ship.
         spaceShipRigidBody.AddTorque(Vector3.up * horizontal * 50);
 
         backgroundRenderer.material.mainTextureOffset = new Vector2(-transform.position.x * 0.05f, -transform.position.z * 0.05f);
@@ -254,16 +251,23 @@ public class SpaceShipControll : MonoBehaviour
         backgroundRenderer3.material.mainTextureOffset = new Vector2(-transform.position.x * 0.5f * 0.05f, -transform.position.z * 0.5f * 0.05f);
     }
 
+    /// <summary>
+    /// Is called every frame after all Update functions.
+    /// </summary>
     void LateUpdate()
     {
+        // Calculate the distance of the camera to the ship.
         float dist = minCameraDistance * Mathf.Max(1, spaceShipRigidBody.velocity.magnitude * 0.25f) * speedFactor;
+        // Zoom out when 'F' is pressed.
         float yOffset = miniMap ? maxCameraDistance : dist;
+        // Move the camera.
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,
                                                       transform.position + Vector3.up * yOffset,
                                                       Time.deltaTime * 3);
+        // Look at the ship.
         Camera.main.transform.LookAt(carLookAt);
-
         Vector3 backgroundPos = transform.position;
+
         backgroundPos.y = -10;
         background.position = backgroundPos;
     }
