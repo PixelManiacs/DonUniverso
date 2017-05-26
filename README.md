@@ -12,7 +12,7 @@ Which organisation shall receive the money will be decided by contributors.
 
 # Organisational Stuff
 
-If you'd like to contribute check for open issues on GitHub or discuss with other contributers on our [Discord channel](https://discordapp.com/channels/235374231938924545/316945649901764628).
+If you'd like to contribute check for open issues on GitHub or discuss with other contributers on our [Discord Server](https://discord.gg/ghxmFzj), Channel [#don-universo](https://discordapp.com/channels/235374231938924545/316945649901764628).
 
 ## Contribute
 
