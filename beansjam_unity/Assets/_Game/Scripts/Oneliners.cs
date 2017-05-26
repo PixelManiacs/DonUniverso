@@ -5,31 +5,34 @@ using UnityEngine;
 public class Oneliners : MonoBehaviour
 {
 
-	public AudioSource audioSource;
-	public List<AudioClip> allClips = new List<AudioClip>();
+    public AudioSource audioSource;
+    public List<AudioClip> allClips = new List<AudioClip>();
 
-	private List<AudioClip> clipsToUse = new List<AudioClip>();
-	private int previousClip = 99;
+    private int previousClipNumber = 99;
 
+    /// <summary>
+    /// Plays a random audio clip
+    /// </summary>
 	public void PlayRandomClip()
-	{
-		if (audioSource.isPlaying)
-		{
-			return;
-		}
+    {
+        int randomClipNumber;
 
-		clipsToUse.Clear();
-		clipsToUse = new List<AudioClip>(allClips);
+        // if the audio source is not playing
+        if (!audioSource.isPlaying)
+        {
+            // avoid playing the same clip two times in a row
+            do
+            {
+                // pick a random audio clip
+                randomClipNumber = Random.Range(0, allClips.Count);
+            } while (randomClipNumber == previousClipNumber);
 
-		if (previousClip < allClips.Count)
-		{
-			clipsToUse.RemoveAt(previousClip);
-		}
+            previousClipNumber = randomClipNumber;
 
-		int randomClip = Random.Range(0, clipsToUse.Count);
-		previousClip = randomClip;
-
-		audioSource.clip = clipsToUse[randomClip];
-		audioSource.Play();
-	}
+            // assign the clip to the audio source
+            audioSource.clip = allClips[randomClipNumber];
+            // play the audio source
+            audioSource.Play();
+        }
+    }
 }
