@@ -39,7 +39,7 @@ Some initial ideas for contributions:
 
 The game has been submitted to Greenlight:
 http://steamcommunity.com/sharedfiles/filedetails/?id=930493851
-It has 221 votes so far, so there is a (low to medium) chance we might get it geenlit.
+It has 236 votes so far, so there is a (low) chance we might get it geenlit. I guess we need around 2,000 votes to get it greenlit.
 
 ## iOS
 
