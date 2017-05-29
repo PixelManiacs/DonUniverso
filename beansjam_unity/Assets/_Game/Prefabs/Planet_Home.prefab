@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032127770324308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4137103028179332}
@@ -263,6 +263,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 10
   boostPrice: 4
+  shieldPrice: 4
+  weaponPrice: 4
+  boostPriceText: {fileID: 114491533817265668, guid: 5d95a85884f604be5a7d6f233d518471,
+    type: 2}
+  shieldPriceText: {fileID: 114342117000889628, guid: 5d95a85884f604be5a7d6f233d518471,
+    type: 2}
+  weaponPriceText: {fileID: 114296868866921296, guid: 5d95a85884f604be5a7d6f233d518471,
+    type: 2}
+  canvasGroup: {fileID: 225418999714977906, guid: 5d95a85884f604be5a7d6f233d518471,
+    type: 2}
+  goPlayer: {fileID: 1266784362553910, guid: 27169d522f1ef44b3b73ad65c08e5fe6, type: 2}
+  goMoneyPopup: {fileID: 1235517457631032, guid: 27169d522f1ef44b3b73ad65c08e5fe6,
+    type: 2}
 --- !u!135 &135354664236625396
 SphereCollider:
   m_ObjectHideFlags: 1

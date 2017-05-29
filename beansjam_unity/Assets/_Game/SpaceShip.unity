@@ -879,11 +879,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114003968245037202, guid: 744fedb2c3e2a496ab959b391c8c3b48,
         type: 2}
-      propertyPath: radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114003968245037202, guid: 744fedb2c3e2a496ab959b391c8c3b48,
-        type: 2}
       propertyPath: boostPriceText
       value: 
       objectReference: {fileID: 206913030}
