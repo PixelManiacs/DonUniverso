@@ -2,6 +2,8 @@
 
 Don Universo is a game project initiated by the [Pixel Maniacs](https://twitter.com/pixel_maniacs) during a gamejam called "[beansjam](http://jams.gamejolt.io/beansjam)" by German Gaming TV channel [Rocket Beans TV](https://www.rocketbeans.tv):
 
+[Free download of the game version after 48h](http://gamejolt.com/games/don_universo/257535)
+
 [![Don Universo - Preview after 48h GameDev](http://pixel-maniacs.com/uploads/donuniverso2.gif)](http://www.youtube.com/watch?v=R9mJScr46g8)
 
 We would love to see the game being futher developed, but currently don't have the time and budget to finish it ourselves.
@@ -37,7 +39,7 @@ Some initial ideas for contributions:
 
 The game has been submitted to Greenlight:
 http://steamcommunity.com/sharedfiles/filedetails/?id=930493851
-It has 221 votes so far, so there is a (low to medium) chance we might get it geenlit.
+It has 236 votes so far, so there is a (low) chance we might get it geenlit. I guess we need around 2,000 votes to get it greenlit.
 
 ## iOS
 
