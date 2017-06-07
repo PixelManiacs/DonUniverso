@@ -207,9 +207,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4360138394505780}
-  - component: {fileID: 114268303661026638}
+  - component: {fileID: 114967195797897498}
   m_Layer: 0
-  m_Name: Kompas
+  m_Name: Compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,17 +1111,6 @@ MonoBehaviour:
   audioSource: {fileID: 82197892231877526}
   anim: {fileID: 95311433230861622}
   text: {fileID: 102851202878054778}
---- !u!114 &114268303661026638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1858185244453104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71446135723b43a9975ba72f97d6b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114341013778545686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1176,6 +1165,17 @@ MonoBehaviour:
   weapon: 1
   siren: {fileID: 8300000, guid: 68fe013d8f8d44b39aee8babe92bf354, type: 3}
   audio: {fileID: 82492792783092404}
+--- !u!114 &114967195797897498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858185244453104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd5a2de292a646bba95fc98a2085a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114976949755339368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1188,6 +1188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  health: 100
+  healthBarPrefab: {fileID: 1186913669061732, guid: 3dfae39f4080843c1b18357a528b0063,
+    type: 2}
   minCameraDistance: 25
   maxCameraDistance: 100
   speedFactor: 1
@@ -1196,7 +1199,6 @@ MonoBehaviour:
   boostBreakAmount: 50
   pewpewAudio: {fileID: 82492792783092404}
   boostAudio: {fileID: 82131992681525244}
-  health: 100
   maxFuel: 100
   fuel: 100
   fuelConsumptionPerFrame: 1
@@ -1210,10 +1212,8 @@ MonoBehaviour:
   background: {fileID: 0}
   markerObject: {fileID: 0}
   thomson: {fileID: 4140525430311852}
-  bullet: {fileID: 1317684253314578, guid: be4cca8450aa149e78e62091dbeae27d, type: 2}
   carLookAt: {fileID: 4025739255865710}
-  healthBarPrefab: {fileID: 1186913669061732, guid: 3dfae39f4080843c1b18357a528b0063,
-    type: 2}
+  bullet: {fileID: 1317684253314578, guid: be4cca8450aa149e78e62091dbeae27d, type: 2}
 --- !u!198 &198127394779040898
 ParticleSystem:
   m_ObjectHideFlags: 1
