@@ -198,25 +198,50 @@ public class PlanetSpawner : MonoBehaviour {
 		return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 	}
 
+	/// <summary>
+	/// Picks a normal distributed random number, NOT limited to an interval.
+	/// </summary>
+	/// <returns>The gaussian normal distributed random number.</returns>
 	private static float NextGaussian() 
     {
 		float v1, v2, s;
-		do {
-			v1 = 2.0f * Random.Range(0f,1f) - 1.0f;
-			v2 = 2.0f * Random.Range(0f,1f) - 1.0f;
-			s = v1 * v1 + v2 * v2;
-		} while (s >= 1.0f || s == 0f);
+        do
+        {
+            v1 = 2.0f * Random.Range(0f, 1f) - 1.0f;
+            v2 = 2.0f * Random.Range(0f, 1f) - 1.0f;
+            s = v1 * v1 + v2 * v2;
+        } while (s >= 1.0f || Mathf.Abs(s - 0f) < 0.000000001f);
 
 		s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
 
 		return v1 * s;
 	}
 
+	/// <summary>
+	/// Picks a normal distributed random number, NOT limited to an interval.
+	/// </summary>
+	/// <returns>The gaussian normal distributed random number.</returns>
+	/// <param name="mean">The mean of the normal distribution, i.e. the values 
+	///     are scattered around this mean value.</param>
+	/// <param name="standard_deviation">The possible deviation factor of the 
+	///     randomly choosen value.</param>
 	private static float NextGaussian(float mean, float standard_deviation) 
     {
 		return mean + NextGaussian() * standard_deviation;
 	}
 
+	/// <summary>
+	/// Picks a normal distributed random number, limited to an interval.
+	/// </summary>
+	/// <returns>The gaussian normal distributed random number.</returns>
+	/// <param name="mean">The mean of the normal distribution, i.e. the values 
+	///     are scattered around this mean value.</param>
+	/// <param name="standard_deviation">The possible deviation factor of the 
+	///     randomly choosen value.</param>
+	/// <param name="min">The minimum of the range. I.e. no random value will be
+	///     smaller than the minimum.</param>
+	/// <param name="max">The maximum of the range. I.e. no random value will be
+	///     greater than the maximum.</param>
 	private static float NextGaussian (float mean, float standard_deviation, float min, float max) 
     {
 		float x;
