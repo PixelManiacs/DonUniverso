@@ -77,7 +77,7 @@ public class PlanetSpawner : MonoBehaviour {
 								   range * maxLevel * Random.Range(0.8f, 1.2f)));
 
 			// "transform" the level value into the size interval
-			size = MapToSingleValue(level, minLevel, maxLevel, sizeMin, sizeMax);
+			size = MapToInterval(level, minLevel, maxLevel, sizeMin, sizeMax);
 
 			// do this as long as there are objects around 10 times the size
 
@@ -124,7 +124,8 @@ public class PlanetSpawner : MonoBehaviour {
 	/// Instaniates a single-colored planet.
 	/// </summary>
 	/// <returns>The instaniated planet game object.</returns>
-	private GameObject InstantiateSingleColor() {
+	private GameObject InstantiateSingleColor()
+    {
 		// Pick a random planet prefab
 		var prefab = planetPrefabsSingleColor[Random.Range(0, planetPrefabsSingleColor.Length)];
         
@@ -140,7 +141,8 @@ public class PlanetSpawner : MonoBehaviour {
 	/// Instaniates a dual-colored planet.
 	/// </summary>
 	/// <returns>The instaniated planet game object.</returns>
-	private GameObject InstantiateDualColor() {
+	private GameObject InstantiateDualColor() 
+    {
 		// Pick a random planet prefab
 		var prefab = planetPrefabsDualColor[Random.Range(0, planetPrefabsDualColor.Length)];
 
@@ -155,7 +157,8 @@ public class PlanetSpawner : MonoBehaviour {
 	/// <summary>
 	/// Spawns the asteroid gameobjects.
 	/// </summary>
-	public void SpawnAsteroid() {
+	public void SpawnAsteroid() 
+    {
 		// pick a random asteroid prefab and instaniate it
 		var prefab = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
 		var go = Instantiate(prefab) as GameObject;
@@ -172,11 +175,31 @@ public class PlanetSpawner : MonoBehaviour {
 		go.transform.localScale = new Vector3(size, size, size);
 	}
 
-	private static float MapToSingleValue(float value, float from1, float to1, float from2, float to2) {
+	/// <summary>
+	/// Map the given value from the interval (from1, to1) to value in the 
+	/// interval (from2, to2). This is can be used to transform the level of a 
+	/// planet to its size.
+	/// Calculates:
+	/// (value - from1) / (to1 - from1) * (to2-from2) + from2
+	/// </summary>
+	/// <returns>The mapped single value.</returns>
+	/// <param name="value">The main contributing value e.g. the level of the
+	///     planet</param>
+	/// <param name="from1">The minimum of the value range e.g. the minimum
+	///     planet levels</param>
+	/// <param name="to1">The maximum of the value range e.g. the maximum planet
+	///     level</param>
+	/// <param name="from2">The minimum of the range for the returned value e.g.
+	///     the minimum planet size</param>
+	/// <param name="to2">The maximum of the range for the returned value e.g.
+	///     the maximum planet size</param>
+	private static float MapToInterval(float value, float from1, float to1, float from2, float to2) 
+    {
 		return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 	}
 
-	private static float NextGaussian() {
+	private static float NextGaussian() 
+    {
 		float v1, v2, s;
 		do {
 			v1 = 2.0f * Random.Range(0f,1f) - 1.0f;
@@ -189,11 +212,13 @@ public class PlanetSpawner : MonoBehaviour {
 		return v1 * s;
 	}
 
-	private static float NextGaussian(float mean, float standard_deviation) {
+	private static float NextGaussian(float mean, float standard_deviation) 
+    {
 		return mean + NextGaussian() * standard_deviation;
 	}
 
-	private static float NextGaussian (float mean, float standard_deviation, float min, float max) {
+	private static float NextGaussian (float mean, float standard_deviation, float min, float max) 
+    {
 		float x;
 		do {
 			x = NextGaussian(mean, standard_deviation);
