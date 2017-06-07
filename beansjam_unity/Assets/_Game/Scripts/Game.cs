@@ -7,20 +7,13 @@ using UnityEngine;
 /// </summary>
 public class Game : MonoBehaviour {
 
-    // The name generator generates names for the spawned planets.
-	public NameGenerator nameGenerator { 
-        get; 
-        internal set; 
-    }
-
     // The planet spawner component, used to spawn the planets and asteroids.
 	[HideInInspector] 
     public PlanetSpawner planetSpawner;
 
 	private void Awake() {
-        // Initialize the name generator and planet spawner
+        // Initialize the planet spawner
 		Random.InitState("hdmksdfkasdfkjh".GetHashCode());
-		nameGenerator = new NameGenerator();
 		planetSpawner = GetComponent<PlanetSpawner>();
 	}
 

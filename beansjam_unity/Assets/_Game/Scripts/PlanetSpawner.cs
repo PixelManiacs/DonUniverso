@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Planet spawner. This component spawns planets and asteroids "kind of" random
+/// based.
+/// </summary>
 public class PlanetSpawner : MonoBehaviour {
+
+	// Empty transform objects used to group the spawned planets and asteroids
 	[Header("Containers")]
 	public Transform planetContainer;
 	public Transform asteroidContainer;
 
+	// Prefabs of the objects to spawn (i.e. planets and asteroids);
 	[Header("Prefabs")]
 	public GameObject[] planetPrefabsDualColor;
 	public GameObject[] planetPrefabsSingleColor;
@@ -14,15 +21,35 @@ public class PlanetSpawner : MonoBehaviour {
 	public GameObject planetPrefabSchmenus;
 	public GameObject[] asteroidPrefabs;
 
-	public float range = 10000f;
-	public int maxLevel = 100;
-	public float sizeMin = 4;
-	public float sizeMax = 100;
-	private Game game;
+	// The color palette for the planets
 	public Color[] PlanetColorArray;
 
+	// The Range of the universe
+	// i.e. the area in which objects spawn is between -range and range
+	// for both, the x- and y-axis
+	public float range = 10000f;
+
+	// the min and max level for the planets
+	public int minLevel = 1;
+	public int maxLevel = 100;
+
+	// The min and max sizes for the planets
+	public float sizeMin = 0.3f;
+	public float sizeMax = 100;
+
+    // The min and max size for asteroids
+	public float minSizeAsteroids = 0.5f;
+	public float maxSizeAsteroids = 3f;
+
+	// The name generator, which is used to generate names for planets
+	// Thanks, Captain Obvious.
+	private NameGenerator nameGenerator;
+
+	/// <summary>
+	/// Initialize the PlanetSpawner i.e. create the name generator.
+	/// </summary>
 	private void Awake() {
-		game = GetComponent<Game>();
+		nameGenerator = new NameGenerator();
 	}
 
 	public void SpawnPlanet() {
@@ -37,7 +64,7 @@ public class PlanetSpawner : MonoBehaviour {
 			size = Map(level, 1, 100, sizeMin, sizeMax);
 		} while (Physics.OverlapSphere(position, size*10).Length > 0);
 
-		var name = game.nameGenerator.GenerateName();
+		var name = nameGenerator.GenerateName();
 
 		GameObject go = null;
 		if (name.Contains("SCHMATURN")) {
