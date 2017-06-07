@@ -52,20 +52,44 @@ public class PlanetSpawner : MonoBehaviour {
 		nameGenerator = new NameGenerator();
 	}
 
-	public void SpawnPlanet() {
+	/// <summary>
+	/// Spawns a planet.
+	/// </summary>
+	public void SpawnPlanet() 
+    {
 		float x, y, size;
 		Vector3 position;
 		int level;
+
+		// roll out a position, which is at least 10 times the size away from 
+		// every other planet. Thus smaller planets with a lower level appear 
+		// closer together and more in the center of the universe, bigger 
+		// planets spawn in the outer rim.
 		do {
 			x = NextGaussian(0, 100, -range, range);
 			y = NextGaussian(0, 100, -range, range);
 			position = new Vector3(x, 0, y);
-			level = Mathf.RoundToInt(Mathf.Ceil(Vector3.Distance(Vector3.zero, position)/range*maxLevel*Random.Range(0.8f, 1.2f)));
-			size = Map(level, 1, 100, sizeMin, sizeMax);
+
+			// roll out the level of the planet depending on the position
+			// i.e. higher level planets are more away from the center/home planet
+			level = Mathf.RoundToInt(
+						Mathf.Ceil(Vector3.Distance(Vector3.zero, position) /
+								   range * maxLevel * Random.Range(0.8f, 1.2f)));
+
+			// "transform" the level value into the size interval
+			size = MapToSingleValue(level, minLevel, maxLevel, sizeMin, sizeMax);
+
+			// do this as long as there are objects around 10 times the size
+
 		} while (Physics.OverlapSphere(position, size*10).Length > 0);
 
+		// generate a name for the planet to spawn.
 		var name = nameGenerator.GenerateName();
 
+		// Create/instantiate the planet game object.
+		// if it is a special planet i.e. its name is SCHMATURN or SCHMENUS
+		// pick a special prefab.
+		// Otherwise randomly choose between single or double colored planets
 		GameObject go = null;
 		if (name.Contains("SCHMATURN")) {
 			go = Instantiate(planetPrefabSchmaturn) as GameObject;
@@ -81,6 +105,8 @@ public class PlanetSpawner : MonoBehaviour {
 			}
 		}
 
+		// pack the spawned planet into the planet container
+		// and initialize attributes like the layer, the name, position, etc.
 		go.transform.SetParent(planetContainer);
 		go.layer = LayerMask.NameToLayer("Planet");
 		go.tag = "Planet";
@@ -88,11 +114,10 @@ public class PlanetSpawner : MonoBehaviour {
 		go.transform.position = position;
 		go.transform.localScale = new Vector3(size, size, size);
 
+		// add the planet component script to the planet game object
 		var planet = go.AddComponent<Planet>();
 		planet.level = level;
 		planet.name = name;
-
-		go.GetComponent<MeshRenderer>().material.color = PlanetColorArray[Random.Range(0, PlanetColorArray.Length)];
 	}
 
 	private GameObject InstantiateSingleColor() {
@@ -123,7 +148,7 @@ public class PlanetSpawner : MonoBehaviour {
 		go.transform.localScale = new Vector3(size, size, size);
 	}
 
-	private static float Map(float value, float from1, float to1, float from2, float to2) {
+	private static float MapToSingleValue(float value, float from1, float to1, float from2, float to2) {
 		return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 	}
 
