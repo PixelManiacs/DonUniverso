@@ -38,8 +38,8 @@ public class PlanetSpawner : MonoBehaviour {
 	public float sizeMax = 100;
 
     // The min and max size for asteroids
-	public float minSizeAsteroids = 0.5f;
-	public float maxSizeAsteroids = 3f;
+    public float sizeMinAsteroids = 0.5f;
+    public float sizeMaxAsteroids = 3f;
 
 	// The name generator, which is used to generate names for planets
 	// Thanks, Captain Obvious.
@@ -171,7 +171,7 @@ public class PlanetSpawner : MonoBehaviour {
 		go.transform.position = new Vector3(x, 0, y);
 		
         // Randomly scale the asteroids.
-		var size = Random.Range(minSizeAsteroids, maxSizeAsteroids);
+		var size = Random.Range(sizeMinAsteroids, sizeMaxAsteroids);
 		go.transform.localScale = new Vector3(size, size, size);
 	}
 
