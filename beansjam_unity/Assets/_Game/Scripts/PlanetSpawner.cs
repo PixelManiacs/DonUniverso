@@ -120,31 +120,55 @@ public class PlanetSpawner : MonoBehaviour {
 		planet.name = name;
 	}
 
+	/// <summary>
+	/// Instaniates a single-colored planet.
+	/// </summary>
+	/// <returns>The instaniated planet game object.</returns>
 	private GameObject InstantiateSingleColor() {
+		// Pick a random planet prefab
 		var prefab = planetPrefabsSingleColor[Random.Range(0, planetPrefabsSingleColor.Length)];
+        
+
+        // Instantiate it and pick & set a color for the planet randomly out of the palette
 		var go = Instantiate(prefab) as GameObject;
 		go.GetComponent<MeshRenderer>().material.color = PlanetColorArray[Random.Range(0, PlanetColorArray.Length)];
+
 		return go;
 	}
 
+	/// <summary>
+	/// Instaniates a dual-colored planet.
+	/// </summary>
+	/// <returns>The instaniated planet game object.</returns>
 	private GameObject InstantiateDualColor() {
+		// Pick a random planet prefab
 		var prefab = planetPrefabsDualColor[Random.Range(0, planetPrefabsDualColor.Length)];
+
+		// Instantiate it and pick & set two colors for the planet randomly out of the palette
 		var go = Instantiate(prefab) as GameObject;
 		go.GetComponent<MeshRenderer>().materials[0].color = PlanetColorArray[Random.Range(0, PlanetColorArray.Length)];
 		go.GetComponent<MeshRenderer>().materials[1].color = PlanetColorArray[Random.Range(0, PlanetColorArray.Length)];
+
 		return go;
 	}
 
+	/// <summary>
+	/// Spawns the asteroid gameobjects.
+	/// </summary>
 	public void SpawnAsteroid() {
+		// pick a random asteroid prefab and instaniate it
 		var prefab = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
 		var go = Instantiate(prefab) as GameObject;
 		go.transform.SetParent(asteroidContainer);
 
+		// Calculate normal distributed values for the x and y position
+		// and "move" the spawned asteroid to this randomly choosen position.
 		var x = NextGaussian(0, range/4, -range, range);
 		var y = NextGaussian(0, range/4, -range, range);
 		go.transform.position = new Vector3(x, 0, y);
-
-		var size = Random.Range(0.5f, 3f);
+		
+        // Randomly scale the asteroids.
+		var size = Random.Range(minSizeAsteroids, maxSizeAsteroids);
 		go.transform.localScale = new Vector3(size, size, size);
 	}
 
