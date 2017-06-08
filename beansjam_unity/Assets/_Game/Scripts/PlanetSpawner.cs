@@ -79,8 +79,7 @@ public class PlanetSpawner : MonoBehaviour {
 			// "transform" the level value into the size interval
 			size = MapToInterval(level, minLevel, maxLevel, sizeMin, sizeMax);
 
-			// do this as long as there are objects around 10 times the size
-
+			// generate a new position if there is already a planet on this spot
 		} while (Physics.OverlapSphere(position, size*10).Length > 0);
 
 		// generate a name for the planet to spawn.
