@@ -1,5 +1,7 @@
 # Don Universo
 
+[![Build Status](https://travis-ci.org/PixelManiacs/DonUniverso.svg?branch=master)](https://travis-ci.org/PixelManiacs/DonUniverso)
+
 Don Universo is a game project initiated by the [Pixel Maniacs](https://twitter.com/pixel_maniacs) during a gamejam called "[beansjam](http://jams.gamejolt.io/beansjam)" by German Gaming TV channel [Rocket Beans TV](https://www.rocketbeans.tv):
 
 Download the current version for Windows and Mac [here](https://github.com/PixelManiacs/DonUniverso/releases/latest)  
