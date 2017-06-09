@@ -1,0 +1,22 @@
+language: objective-c
+osx_image: xcode8.1
+rvm:
+- 2.2
+before_install:
+- chmod a+x ./travis/install.sh
+- chmod a+x ./travis/build.sh
+install:
+- ./travis/install.sh
+script:
+- ./travis/build.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: dHrYq31wt4krI2MpJet8WxXAo7xYlkSR7ObZOPRdNA9YN08zWaxKQ33qzshAa8yrnjr47lMxxLqiIooZHDOj7PBhOWEnGgfzcBEzetf58EBRNc7THzBWgTIJbrr8SGu0IcQXVbeF7/KcRUgazPfWne6A2Qgq6jOgR8YkhXnbSOnqlRK3eN2nVYr0vnBbf7RmCYZrpQF9JgrzBCrm9DODutIXbGLEuXQQ+bcOS6PiPPC6x5oPQIMlNeHsuHBRyUQJh+EqtegPeuOE56Zp7WmUgDk1BtLI8rGDgxEkkdWSOFebDxZBerVmhqStKdceWL+OPQYL+KMPlwFGe3bQaTaNpCqRTv0AuRhCz8s2N1rAbYGJCm+s/CZYAgGO5Y80NaxzcVU5/lWsw937DRmDW+vtB59Cni7s389zvsLg7u28xpIyt8bWevfzQbBKwr1YEvIzr99sECtqQmHuqjnnGtucF1dYa8UahZ9UW2IPtrNkfGYilYYkJKAke4eULHELYKwfiCJAXw3tfiBX9ym+mVywQgSLkZPea7/+t6GCdIHPhEX4cPY3JZEG9ypYMMhfjygj8OjH4SeOsc1gZ28wUZyTVLsOOXX0d3+l/hdiuMZAzPmTji+fJMkAHD5iOkBHZHdsZwTM9TxiUHbIIg8ai1tXr0tnq0fMLIN8gZRsfXYVKzQ=
+  file:
+    - DonUniversoMac.zip
+    - DonUniversoWin.zip
+  skip_cleanup: true
+  on:
+    repo: PixelManiacs/DonUniverso
+    tags: true
