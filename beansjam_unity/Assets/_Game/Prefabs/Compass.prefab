@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4381597411670230}
   - component: {fileID: 114627604892631602}
   m_Layer: 0
-  m_Name: Kompas
+  m_Name: Compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
