@@ -21,7 +21,7 @@ If you'd like to contribute check for open issues on GitHub or discuss with othe
 
 ## Contribute
 
-If you want to change something fork this repo, commit your changes and submit a pull request. We'll review it and merge it. Our current maintainer (responsible for accepting pull requests) is [Chris](https://twitter.com/hinzundcode). If somebody else want's to do this job, simply contact him :)
+If you want to change something fork this repo, commit your changes and submit a pull request. We'll review it and merge it.
 
 Please use Unity 5.6.1f1.
 
